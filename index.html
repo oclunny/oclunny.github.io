@@ -3,16 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Miguel Costa</title>
+    <title>Miguel Costa — Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Miguel Costa — developer portfolio showcasing projects built with HTML, CSS, JavaScript, and Python."
+    />
+    <meta name="theme-color" content="#0d1117" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Miguel Costa — Developer Portfolio" />
+    <meta
+      property="og:description"
+      content="Projects and skills — HTML, CSS, JavaScript, Python."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="src/photo2.jpg" />
+
+    <link rel="icon" href="src/photo2.jpg" type="image/jpeg" />
+
+    <!-- Connect early to speed up font + icon loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://kit.fontawesome.com" />
+
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="src/photo2.jpg" type="image/x-icon" />
-    <script src="script.js" defer></script>
     <script
       src="https://kit.fontawesome.com/5a1331177b.js"
       crossorigin="anonymous"
+      defer
     ></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
+    <a href="#knowledge" class="skip-link">Skip to content</a>
+
     <button
       id="toggletheme"
       class="toggletheme button"
@@ -21,133 +45,168 @@
     >
       <i id="themeicon" class="fa-solid fa-sun" aria-hidden="true"></i>
     </button>
+
     <div class="landing">
-      <div class="content">
-        <h1>Hi i'm Miguel Costa 👋</h1>
-        <p>Lets take a look at my portfolio?</p>
-        <a href="#knowledge" class="button">See more!</a>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">miguel@portfolio: ~</span>
+        </div>
+        <div class="terminal-body">
+          <p class="terminal-line"><span class="prompt">$</span>whoami</p>
+          <div class="terminal-output">
+            <h1>Hi, I'm <span class="accent">Miguel Costa</span><span class="typed-cursor" aria-hidden="true"></span></h1>
+            <p>Self-taught developer building with HTML, CSS, JavaScript &amp; Python. Take a look at what I've made.</p>
+            <a href="#knowledge" class="button">
+              See my work
+              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+
     <header id="header">
       <div class="headercontent">
         <div class="logo">
-          <img src="src/photo2.jpg" alt="Miguel_Costa" />
+          <img src="src/photo2.jpg" alt="Miguel Costa" width="44" height="44" />
         </div>
-        <nav>
-          <ul>
-            <li>
-              <a href="#knowledge" class="link">Knowledge</a>
-            </li>
-            <li>
-              <a href="#projects" class="link">Projects</a>
-            </li>
-            <li>
-              <a href="#contact" class="button">Contact</a>
-            </li>
+        <button
+          id="navtoggle"
+          class="navtoggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+        <nav id="primary-nav" aria-label="Primary">
+          <ul class="navlinks">
+            <li><a href="#knowledge" class="link">Knowledge</a></li>
+            <li><a href="#projects" class="link">Projects</a></li>
+            <li><a href="#contact" class="button">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
+
     <main>
-      <div class="knowledge section" id="knowledge">
+      <section class="knowledge section reveal" id="knowledge">
         <div class="title">
+          <span class="comment">// stack</span>
           <h1>My Knowledge</h1>
         </div>
         <div class="cards">
           <div class="knowledgecard">
             <h2>HTML</h2>
-            <i class="fa-brands fa-html5"></i>
+            <i class="fa-brands fa-html5" aria-hidden="true"></i>
           </div>
           <div class="knowledgecard">
             <h2>CSS</h2>
-            <i class="fa-brands fa-css3-alt"></i>
+            <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
           </div>
           <div class="knowledgecard">
             <h2>JavaScript</h2>
-            <i class="fa-brands fa-js"></i>
+            <i class="fa-brands fa-js" aria-hidden="true"></i>
           </div>
           <div class="knowledgecard">
             <h2>Python</h2>
-            <i class="fa-brands fa-python"></i>
+            <i class="fa-brands fa-python" aria-hidden="true"></i>
           </div>
         </div>
-      </div>
-      <div class="projects section" id="projects">
+      </section>
+
+      <section class="projects section reveal" id="projects">
         <div class="title">
+          <span class="comment">// build</span>
           <h1>My Projects</h1>
         </div>
         <div class="cards">
-          <div class="projectcard">
+          <article class="projectcard">
+            <div class="preview">
+              <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+            </div>
             <h2>
               <a
                 href="https://github.com/oclunny/calculator"
-                class="link"
                 target="_blank"
                 rel="noopener noreferrer"
                 >Calculator</a
               >
             </h2>
-            <p>I built a calculator with HTML, CSS, and JavaScript</p>
-            <iframe
-              src="https://github.com/oclunny/calculator"
-              frameborder="0"
-              loading="lazy"
-            ></iframe>
-          </div>
-          <div class="projectcard">
+            <p>A calculator built with HTML, CSS, and JavaScript.</p>
+            <a
+              class="projectlink"
+              href="https://github.com/oclunny/calculator"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="projectcard">
+            <div class="preview">
+              <i class="fa-solid fa-dungeon" aria-hidden="true"></i>
+            </div>
             <h2>
               <a
                 href="https://heartcastle.netlify.app/"
-                class="link"
                 target="_blank"
                 rel="noopener noreferrer"
                 >Wiki</a
               >
             </h2>
-            <p>A game im developing using RPG Maker MZ</p>
-            <iframe
-              src="https://heartcastle.netlify.app/"
-              frameborder="0"
-              loading="lazy"
-            ></iframe>
-          </div>
+            <p>A game wiki I'm developing for a project built in RPG Maker MZ.</p>
+            <a
+              class="projectlink"
+              href="https://heartcastle.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit site <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </article>
         </div>
-      </div>
-      <div class="contact section" id="contact">
+      </section>
+
+      <section class="contact section reveal" id="contact">
         <div class="title">
+          <span class="comment">// reach me</span>
           <h1>Contact</h1>
-          <p>Here are my contact info:</p>
+          <p>Here's how to get in touch.</p>
         </div>
         <div class="cards">
           <div class="contactinfo">
-            <div class="label">Name:</div>
+            <div class="label">Name</div>
             <span class="link">Miguel Costa</span>
           </div>
           <div class="contactinfo">
-            <div class="label">Phone:</div>
-            <a href="tel:+351931971368" class="link" target="_blank"
-              >931971368</a
-            >
+            <div class="label">Phone</div>
+            <a href="tel:+351931971368" class="link">931 971 368</a>
           </div>
           <div class="contactinfo">
-            <div class="label">WhatsApp:</div>
-            <a href="https://wa.me/+351931971368" class="link" target="_blank"
-              >931971368</a
-            >
-          </div>
-          <div class="contactinfo">
-            <div class="label">Email:</div>
+            <div class="label">WhatsApp</div>
             <a
-              href="mailto:miguellomcostta@gmail.com"
+              href="https://wa.me/+351931971368"
               class="link"
               target="_blank"
+              rel="noopener noreferrer"
+              >931 971 368</a
+            >
+          </div>
+          <div class="contactinfo">
+            <div class="label">Email</div>
+            <a href="mailto:miguellomcostta@gmail.com" class="link"
               >miguellomcostta@gmail.com</a
             >
           </div>
-          <div class="contactinfo">
+          <div class="contactinfo socials">
             <a
               href="https://github.com/oclunny"
-              class="link"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -156,7 +215,6 @@
             </a>
             <a
               href="https://www.instagram.com/o._miguell"
-              class="link"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -165,7 +223,6 @@
             </a>
             <a
               href="https://www.linkedin.com/in/miguel-costa-6401b5341/"
-              class="link"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -174,7 +231,7 @@
             </a>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   </body>
 </html>
