@@ -4,7 +4,7 @@
 Miguel Costa, Portfolio
 </p>
 
-<p>
+<p align="center">
   <a href="https://oclunny.github.io/">
     <img src="https://skillicons.dev/icons?i=html,css,js,python" alt="Technologies" />
   </a>
