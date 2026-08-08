@@ -1,5 +1,7 @@
+# Portfolio:
 <p align="cente>
-# Miguel Costa, Portfolio
+  
+Miguel Costa, Portfolio
 
   <a href="https://oclunny.github.io/">
     <img src="https://skillicons.dev/icons?i=html,css,js,python" alt="Technologies" />
