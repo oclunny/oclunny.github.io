@@ -1,5 +1,5 @@
 # Portfolio:
-<p align="cente>
+<p align="center">
   
 Miguel Costa, Portfolio
 
