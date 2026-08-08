@@ -1,6 +1,6 @@
-# Miguel Costa — Portfolio
+<p align="cente>
+# Miguel Costa, Portfolio
 
-<p align="center">
   <a href="https://oclunny.github.io/">
     <img src="https://skillicons.dev/icons?i=html,css,js,python" alt="Technologies" />
   </a>
