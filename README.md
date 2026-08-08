@@ -5,9 +5,7 @@ Miguel Costa, Portfolio
 </p>
 
 <p align="center">
-  <a href="https://oclunny.github.io/">
-    <img src="https://skillicons.dev/icons?i=html,css,js,python" alt="Technologies" />
-  </a>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=000000&height=180&section=header&text=%20Miguel%20Costa&fontSize=42&fontColor=ffffff&animation=twinkling" />
 </p>
 
 <p align="center">
