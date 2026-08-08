@@ -34,10 +34,10 @@ The website acts as a central place to showcase what I'm building, what I'm lear
 
 The portfolio is primarily built using:
 
-* **HTML** — Structure and content
-* **CSS** — Styling, layout, and responsive design
-* **JavaScript** — Interactivity and functionality
-* **Python** — Programming and development experience
+* **HTML**: Structure and content
+* **CSS**: Styling, layout, and responsive design
+* **JavaScript**: Interactivity and functionality
+* **Python**: Programming and development experience
 
 ---
 
