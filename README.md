@@ -135,8 +135,6 @@ Open `index.html` in your browser, or use a local development server such as VS 
 
 **GitHub:** https://github.com/oclunny
 
-**RPG Maker MZ Wiki:** https://heartcastle.netlify.app/
-
 ---
 
 ## License
