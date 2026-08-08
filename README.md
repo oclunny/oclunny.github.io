@@ -1,159 +1,148 @@
-# 👨‍💻 Miguel Costa — Portfolio
+# Miguel Costa — Portfolio
 
-> Personal developer portfolio showcasing my projects, skills, and experience building for the web.
+<p align="center">
+  <a href="https://oclunny.github.io/">
+    <img src="https://skillicons.dev/icons?i=html,css,js,python" alt="Technologies" />
+  </a>
+</p>
 
-🌐 **Live Website:** [oclunny.github.io](https://oclunny.github.io/)
+<p align="center">
+  <strong>Personal portfolio website showcasing my work, projects, and development journey.</strong>
+</p>
 
----
-
-## 📖 About
-
-Welcome to my personal portfolio!
-
-I'm **Miguel Costa**, a self-taught developer interested in building websites, applications, and interactive digital experiences.
-
-This portfolio was created to showcase the technologies I'm learning, the projects I've built, and the things I'm currently working on.
-
-The website uses a **terminal-inspired design**, giving the portfolio a developer-focused identity while keeping the content simple and accessible.
-
----
-
-## 🚀 Features
-
-* 🖥️ Terminal-inspired portfolio design
-* 📱 Responsive layout
-* 👋 Personal introduction
-* 🧠 Skills and technologies section
-* 🛠️ Project showcase
-* 📬 Contact information
-* 🔗 Links to individual projects
-* ⚡ Lightweight and fast
+<p align="center">
+  <a href="https://oclunny.github.io/">Live Portfolio</a>
+  ·
+  <a href="https://github.com/oclunny">GitHub</a>
+</p>
 
 ---
 
-## 🧰 Technologies
+## About
 
-The portfolio and featured projects are built around technologies I'm currently learning and using:
+This repository contains my personal portfolio website.
 
-| Technology     | Usage                                   |
-| -------------- | --------------------------------------- |
-| **HTML5**      | Structure and semantic markup           |
-| **CSS3**       | Styling, layouts, and responsive design |
-| **JavaScript** | Interactivity and functionality         |
-| **Python**     | Programming and development             |
+The portfolio is designed around a **terminal-inspired interface**, combining a developer-focused aesthetic with a simple and interactive way of presenting my background, skills, and projects.
+
+The website acts as a central place to showcase what I'm building, what I'm learning, and the technologies I work with.
 
 ---
 
-## 💻 Projects
+## Tech Stack
 
-### 🧮 Calculator
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=html,css,js,python" alt="HTML CSS JavaScript Python" />
+</p>
 
-A simple calculator application built using:
+The portfolio is primarily built using:
 
-* HTML
-* CSS
-* JavaScript
-
-🔗 **[View Project](#)**
-
----
-
-### 📚 RPG Maker MZ Wiki
-
-A game wiki I'm developing for a project created with **RPG Maker MZ**.
-
-The project is designed to collect and present information about the game in an accessible way.
-
-🔗 **[View Wiki](https://heartcastle.netlify.app/)**
+* **HTML** — Structure and content
+* **CSS** — Styling, layout, and responsive design
+* **JavaScript** — Interactivity and functionality
+* **Python** — Programming and development experience
 
 ---
 
-## 🎯 Purpose
+## Portfolio
 
-This portfolio serves as my personal space on the web to:
+The live website contains information about me, my development skills, and the projects I have worked on.
 
-* Showcase projects I've created
-* Document the technologies I'm learning
-* Experiment with web design and development
-* Share my work with potential collaborators and employers
-* Continue improving my development skills
-
----
-
-## 📸 Portfolio
-
-Visit the live website to explore the full portfolio:
-
-**🌐 [oclunny.github.io](https://oclunny.github.io/)**
+<p align="center">
+  <a href="https://oclunny.github.io/">
+    <img src="https://img.shields.io/badge/VIEW_PORTFOLIO-000000?style=for-the-badge&logo=github&logoColor=white" alt="View Portfolio" />
+  </a>
+</p>
 
 ---
 
-## 📂 Project Structure
+## Projects
 
-```text
-portfolio/
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-├── images/
-└── README.md
-```
+### Calculator
 
-> The exact structure may change as the portfolio continues to evolve.
+A browser-based calculator project built to practice front-end development and JavaScript functionality.
+
+**Built with:**
+
+<p>
+  <img src="https://skillicons.dev/icons?i=html,css,js" alt="HTML CSS JavaScript" />
+</p>
 
 ---
 
-## 🔧 Running Locally
+### RPG Maker MZ Wiki
 
-To run the portfolio locally:
+A wiki project created around an RPG Maker MZ game, providing a dedicated place to organize and present information about the game.
 
-```bash
-git clone https://github.com/oclunny/oclunny.github.io.git
-cd oclunny.github.io
-```
+**Website:**
 
-Then open `index.html` in your browser.
-
-Alternatively, you can use a local development server such as **VS Code Live Server**.
+[Heart Castle Wiki](https://heartcastle.netlify.app/)
 
 ---
 
-## 🌱 Currently Learning
+## Development
 
-I'm continuously expanding my development skills and currently focusing on:
+This portfolio is also a place for experimentation and continuous improvement.
+
+Areas I'm currently developing include:
 
 * Front-end development
 * JavaScript
 * Python
 * Responsive web design
-* Building real-world projects
-* Improving UI/UX
-* Learning through hands-on development
+* UI and UX
+* Interactive web experiences
+* Project development
+* Problem solving
 
 ---
 
-## 📬 Contact
+## Design
 
-If you'd like to get in touch, feel free to reach out.
+The portfolio uses a **terminal-inspired visual style** rather than following a traditional portfolio layout.
 
-**Miguel Costa**
-
-* 📧 Email: `miguellomcostta@gmail.com`
-* 💬 WhatsApp: [Contact me](https://wa.me/351931971368)
-* 🌐 Portfolio: [oclunny.github.io](https://oclunny.github.io/)
+The idea is to make the website feel more like interacting with a developer's environment while still keeping the content straightforward and easy to navigate.
 
 ---
 
-## ⭐ Support
+## Running Locally
 
-If you found this project interesting, feel free to **star the repository** ⭐
+Clone the repository:
+
+```bash
+git clone https://github.com/oclunny/oclunny.github.io.git
+```
+
+Enter the project directory:
+
+```bash
+cd oclunny.github.io
+```
+
+Open `index.html` in your browser, or use a local development server such as VS Code Live Server.
 
 ---
 
-## 📄 License
+## Links
 
-This project is for personal and portfolio purposes.
+<p align="left">
+  <a href="https://oclunny.github.io/">
+    <img src="https://skillicons.dev/icons?i=html" width="40" alt="Portfolio" />
+  </a>
+  <a href="https://github.com/oclunny">
+    <img src="https://skillicons.dev/icons?i=github" width="40" alt="GitHub" />
+  </a>
+</p>
 
-© 2026 **Miguel Costa**
+**Portfolio:** https://oclunny.github.io/
+
+**GitHub:** https://github.com/oclunny
+
+**RPG Maker MZ Wiki:** https://heartcastle.netlify.app/
+
+---
+
+## License
+
+This portfolio is a personal project created by **Miguel Costa**.
+
+© 2026 Miguel Costa
