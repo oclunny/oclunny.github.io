@@ -1,233 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Miguel Costa — Developer Portfolio</title>
-    <meta
-      name="description"
-      content="Miguel Costa — developer portfolio showcasing projects built with HTML, CSS, JavaScript, and Python."
-    />
-    <meta name="theme-color" content="#0d1117" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Miguel Costa — Developer Portfolio" />
-    <meta
-      property="og:description"
-      content="Projects and skills — HTML, CSS, JavaScript, Python."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="src/photo2.jpg" />
-
-    <link rel="icon" href="src/photo2.jpg" type="image/jpeg" />
-
-    <!-- Connect early to speed up font + icon loading -->
+    <meta name="description" content="Miguel Ângelo — developer, Linux enthusiast, and creative builder." />
+    <title>Miguel Ângelo — Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+            boxShadow: { glow: '0 0 0 1px rgba(255,255,255,.09), 0 20px 60px rgba(0,0,0,.45)' },
+          },
+        },
+      };
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://kit.fontawesome.com" />
-
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/5a1331177b.js"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { background: #09090b; }
+      .grid-fade { background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 54px 54px; mask-image: linear-gradient(to bottom, black, transparent 80%); }
+      .noise { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E"); }
+      .project-card:hover .project-arrow { transform: translate(3px, -3px); }
+      /* Modern site scrollbar — Firefox */
+      * { scrollbar-width: thin; scrollbar-color: #52525b #09090b; }
+      /* Modern site scrollbar — Chromium, Safari, Edge */
+      ::-webkit-scrollbar { width: 11px; }
+      ::-webkit-scrollbar-track { background: #09090b; border-left: 1px solid rgba(255,255,255,.05); }
+      ::-webkit-scrollbar-thumb { border: 3px solid #09090b; border-radius: 999px; background: linear-gradient(180deg, #71717a, #3f3f46); }
+      ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #a1a1aa, #52525b); }
+      ::-webkit-scrollbar-corner { background: #09090b; }
+    </style>
   </head>
-  <body>
-    <a href="#knowledge" class="skip-link">Skip to content</a>
-
-    <button
-      id="toggletheme"
-      class="toggletheme button"
-      type="button"
-      aria-label="Toggle color theme"
-    >
-      <i id="themeicon" class="fa-solid fa-sun" aria-hidden="true"></i>
-    </button>
-
-    <div class="landing">
-      <div class="terminal">
-        <div class="terminal-bar">
-          <span class="terminal-dot red"></span>
-          <span class="terminal-dot yellow"></span>
-          <span class="terminal-dot green"></span>
-          <span class="terminal-title">miguel@portfolio: ~</span>
-        </div>
-        <div class="terminal-body">
-          <p class="terminal-line"><span class="prompt">$</span>whoami</p>
-          <div class="terminal-output">
-            <h1>Hi, I'm <span class="accent">Miguel Costa</span><span class="typed-cursor" aria-hidden="true"></span></h1>
-            <p>Self-taught developer building with HTML, CSS, JavaScript &amp; Python. Take a look at what I've made.</p>
-            <a href="#knowledge" class="button">
-              See my work
-              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+  <body class="overflow-x-hidden bg-zinc-950 font-sans text-zinc-100 antialiased selection:bg-white selection:text-black">
+    <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div class="grid-fade absolute inset-x-0 top-0 h-[720px] opacity-60"></div>
+      <div class="absolute left-1/2 top-[-230px] h-[520px] w-[760px] -translate-x-1/2 rounded-full bg-violet-700/15 blur-[130px]"></div>
+      <div class="absolute right-[-180px] top-[330px] h-[350px] w-[350px] rounded-full bg-sky-700/10 blur-[120px]"></div>
+      <div class="noise absolute inset-0 opacity-[0.035]"></div>
     </div>
 
-    <header id="header">
-      <div class="headercontent">
-        <div class="logo">
-          <img src="src/photo2.jpg" alt="Miguel Costa" width="44" height="44" />
+    <header class="sticky top-0 z-50 px-4 pt-4 sm:px-6">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-white/10 bg-zinc-950/70 px-4 py-3 shadow-2xl backdrop-blur-xl sm:px-5" aria-label="Main navigation">
+        <a href="#home" class="group relative block h-9 w-9 overflow-hidden rounded-xl ring-1 ring-white/15 transition hover:scale-105 hover:ring-white/35" aria-label="Miguel Ângelo home"><img src="assets/miguel-angelo-profile.png" alt="Miguel Ângelo" class="h-full w-full object-cover object-center transition duration-300 group-hover:scale-110" /></a>
+        <div class="hidden items-center gap-1 rounded-xl border border-white/5 bg-white/[0.025] p-1 md:flex">
+          <a class="rounded-lg px-3 py-1.5 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white" href="#projects">Projects</a>
+          <a class="rounded-lg px-3 py-1.5 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white" href="#stack">Stack</a>
+          <a class="rounded-lg px-3 py-1.5 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white" href="#about">About</a>
+          <a class="rounded-lg px-3 py-1.5 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white" href="#contact">Contact</a>
         </div>
-        <button
-          id="navtoggle"
-          class="navtoggle"
-          type="button"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-          aria-controls="primary-nav"
-        >
-          <i class="fa-solid fa-bars" aria-hidden="true"></i>
-        </button>
-        <nav id="primary-nav" aria-label="Primary">
-          <ul class="navlinks">
-            <li><a href="#knowledge" class="link">Knowledge</a></li>
-            <li><a href="#projects" class="link">Projects</a></li>
-            <li><a href="#contact" class="button">Contact</a></li>
-          </ul>
-        </nav>
+        <div class="hidden items-center gap-2 rounded-full border border-emerald-400/15 bg-emerald-400/5 px-3 py-1.5 text-xs font-medium text-emerald-300 sm:flex">
+          <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span></span>
+          <span id="status-text">Building new things</span>
+        </div>
+        <div class="flex items-center gap-1"><button id="language-toggle" class="rounded-lg border border-white/10 px-2.5 py-1.5 text-xs font-semibold text-zinc-300 transition hover:bg-white/10 hover:text-white" aria-label="Switch language">PT</button><button id="menu-button" class="rounded-lg p-2 text-zinc-300 md:hidden" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu" class="h-5 w-5"></i></button></div>
+      </nav>
+      <div id="mobile-menu" class="mx-auto mt-2 hidden max-w-6xl rounded-2xl border border-white/10 bg-zinc-950/95 p-2 backdrop-blur-xl md:hidden">
+        <a class="block rounded-xl px-4 py-3 text-sm text-zinc-300 hover:bg-white/5" href="#projects">Projects</a><a class="block rounded-xl px-4 py-3 text-sm text-zinc-300 hover:bg-white/5" href="#stack">Stack</a><a class="block rounded-xl px-4 py-3 text-sm text-zinc-300 hover:bg-white/5" href="#about">About</a><a class="block rounded-xl px-4 py-3 text-sm text-zinc-300 hover:bg-white/5" href="#contact">Contact</a>
       </div>
     </header>
 
-    <main>
-      <section class="knowledge section reveal" id="knowledge">
-        <div class="title">
-          <span class="comment">// stack</span>
-          <h1>My Knowledge</h1>
-        </div>
-        <div class="cards">
-          <div class="knowledgecard">
-            <h2>HTML</h2>
-            <i class="fa-brands fa-html5" aria-hidden="true"></i>
+    <main id="home">
+      <section class="mx-auto max-w-6xl px-5 pb-24 pt-24 sm:px-6 sm:pt-32 lg:pb-32">
+        <div class="max-w-4xl">
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-3 py-1.5 text-xs font-medium text-zinc-400"><span class="text-zinc-200">✦</span> Developer · Linux enthusiast · creative builder</div>
+          <h1 class="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.065em] text-zinc-100 sm:text-7xl lg:text-[92px]">I build things, break limits, and <span class="text-zinc-500">keep learning.</span></h1>
+          <p class="mt-8 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg">I’m Miguel Ângelo — a developer who enjoys creative coding, automation, games, and open source. From Electron apps to game systems and Linux tooling, I turn curious ideas into working projects.</p>
+          <div class="mt-9 flex flex-wrap items-center gap-3">
+            <a href="#projects" class="group inline-flex items-center gap-2 rounded-xl bg-zinc-100 px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-white hover:shadow-[0_0_30px_rgba(255,255,255,.2)]">View projects <i data-lucide="arrow-down-right" class="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:translate-y-0.5"></i></a>
+            <button id="copy-email" class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium text-zinc-200 transition hover:border-white/20 hover:bg-white/[0.07]"><i data-lucide="copy" class="h-4 w-4"></i><span>Copy email</span></button>
+            <span id="copy-feedback" class="hidden text-sm text-emerald-400" role="status">Copied to clipboard.</span>
           </div>
-          <div class="knowledgecard">
-            <h2>CSS</h2>
-            <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
-          </div>
-          <div class="knowledgecard">
-            <h2>JavaScript</h2>
-            <i class="fa-brands fa-js" aria-hidden="true"></i>
-          </div>
-          <div class="knowledgecard">
-            <h2>Python</h2>
-            <i class="fa-brands fa-python" aria-hidden="true"></i>
+          <div class="mt-12 flex items-center gap-5 text-zinc-500">
+            <a href="https://github.com/oclunny" target="_blank" rel="noreferrer" aria-label="GitHub" class="transition hover:text-white"><i data-lucide="github" class="h-5 w-5"></i></a>
+            <a href="https://www.linkedin.com/in/miguel-costa-0059b13b9" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="transition hover:text-white"><i data-lucide="linkedin" class="h-5 w-5"></i></a>
+            <a href="https://www.instagram.com/clunn.y" target="_blank" rel="noreferrer" aria-label="Instagram" class="transition hover:text-white"><i data-lucide="instagram" class="h-5 w-5"></i></a>
+            <span class="h-px w-10 bg-white/10"></span><span class="text-sm">Scroll to explore</span>
           </div>
         </div>
       </section>
 
-      <section class="projects section reveal" id="projects">
-        <div class="title">
-          <span class="comment">// build</span>
-          <h1>My Projects</h1>
-        </div>
-        <div class="cards">
-          <article class="projectcard">
-            <div class="preview">
-              <i class="fa-solid fa-calculator" aria-hidden="true"></i>
-            </div>
-            <h2>
-              <a
-                href="https://oclunny.github.io/calculator/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Calculator</a
-              >
-            </h2>
-            <p>A calculator built with HTML, CSS, and JavaScript.</p>
-            <a
-              class="projectlink"
-              href="https://oclunny.github.io/calculator/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit site  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-            </a>
+      <section id="projects" class="mx-auto max-w-6xl scroll-mt-28 px-5 pb-28 sm:px-6">
+        <div class="mb-9 flex items-end justify-between gap-4"><div><p class="mb-2 text-xs font-semibold uppercase tracking-[.18em] text-zinc-500">Selected work</p><h2 class="text-3xl font-semibold tracking-[-.04em] sm:text-4xl">Featured projects.</h2></div><a class="hidden items-center gap-2 text-sm text-zinc-400 transition hover:text-white sm:inline-flex" href="#contact">See what’s next <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
+        <div class="grid gap-4 md:grid-cols-2">
+          <article class="project-card group relative min-h-[365px] overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/70 p-6 shadow-glow transition duration-300 hover:-translate-y-1 hover:border-violet-300/30 sm:p-8 md:col-span-2">
+            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_86%_18%,rgba(59,130,246,.22)_0%,rgba(30,58,138,.12)_32%,transparent_66%)]"></div><div class="absolute bottom-7 right-7 flex h-52 w-52 items-center justify-center rounded-[2rem] border border-blue-300/20 bg-zinc-950/90 p-3 shadow-2xl backdrop-blur-sm sm:bottom-8 sm:right-9"><img src="assets/sentinel-wifi-dashboard-logo.png" alt="SENTINEL WiFi Dashboard logo" class="h-full w-full object-contain transition duration-500 group-hover:scale-105" loading="lazy" /></div>
+            <div class="relative flex h-full max-w-md flex-col justify-between"><div><p class="text-sm text-violet-200">01 / Desktop application</p><h3 class="mt-3 text-3xl font-semibold tracking-[-.04em]">SENTINEL</h3><p class="mt-3 leading-6 text-zinc-400">A released Electron project, built as part of my exploration of desktop software and practical development.</p></div><div><div class="mb-5 flex flex-wrap gap-2"><span class="tag">Electron</span><span class="tag">JavaScript</span><span class="tag">HTML / CSS</span></div><div class="flex gap-4 text-sm"><a href="https://oclunny.github.io/sentinel-website/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 text-white">Project site <i data-lucide="arrow-up-right" class="project-arrow h-4 w-4 transition"></i></a><a href="https://github.com/oclunny/sentinel-website" target="_blank" rel="noreferrer" class="text-zinc-400 hover:text-white">Source</a></div></div></div>
           </article>
-
-          <article class="projectcard">
-            <div class="preview">
-              <i class="fa-solid fa-dungeon" aria-hidden="true"></i>
-            </div>
-            <h2>
-              <a
-                href="https://heartcastle.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Wiki</a
-              >
-            </h2>
-            <p>A game wiki I'm developing for a project built in RPG Maker MZ.</p>
-            <a
-              class="projectlink"
-              href="https://heartcastle.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit site <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-            </a>
-          </article>
+          <article class="project-card group relative min-h-[360px] overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-300/30 sm:p-8"><div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_78%_15%,rgba(56,189,248,.16)_0%,rgba(14,116,144,.1)_31%,transparent_63%)]"></div><div class="absolute bottom-0 right-0 h-48 w-64 overflow-hidden rounded-tl-3xl border-l border-t border-white/10 opacity-80 transition duration-500 group-hover:scale-105"><img src="assets/sober-roblox-linux.png" alt="Sober running Roblox on Linux" class="h-full w-full object-cover object-left-top" loading="lazy" /><div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent"></div></div><div class="relative flex h-full flex-col justify-between"><div><p class="text-sm text-sky-200">02 / Linux customization</p><h3 class="mt-3 text-2xl font-semibold tracking-[-.04em]">Sober Roblox Fonts</h3><p class="mt-3 max-w-xs leading-6 text-zinc-400">Replace Roblox fonts in Sober with custom fonts using a lightweight asset overlay.</p></div><div><div class="mb-5 flex flex-wrap gap-2"><span class="tag">Shell</span><span class="tag">Linux</span><span class="tag">Assets</span></div><div class="flex gap-4 text-sm"><a href="https://github.com/oclunny/sober-roblox-fonts" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 text-white">View project <i data-lucide="arrow-up-right" class="project-arrow h-4 w-4 transition"></i></a><a href="https://github.com/oclunny/sober-roblox-fonts" target="_blank" rel="noreferrer" class="text-zinc-400 hover:text-white">Source</a></div></div></div></article>
+          <article class="project-card group relative min-h-[360px] overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-amber-200/30 sm:p-8"><div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_82%_14%,rgba(251,191,36,.16)_0%,rgba(146,64,14,.1)_31%,transparent_62%)]"></div><div class="absolute bottom-0 right-0 h-56 w-56 overflow-hidden rounded-tl-[2rem] border-l border-t border-amber-200/20 shadow-2xl"><img src="assets/heartcastle-logo.png" alt="Heartcastle game logo" class="h-full w-full object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy" /><div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div></div><div class="relative flex h-full flex-col justify-between"><div><p class="text-sm text-amber-100">03 / Game development</p><h3 class="mt-3 text-2xl font-semibold tracking-[-.04em]">Heartcastle</h3><p class="mt-3 max-w-xs leading-6 text-zinc-400">A completed game project — one of the systems that shaped my interest in making interactive worlds.</p></div><div><div class="mb-5 flex flex-wrap gap-2"><span class="tag">RPG Maker MZ</span><span class="tag">Game Design</span><span class="tag">JavaScript</span></div><div class="flex gap-4 text-sm"><a href="https://github.com/oclunny" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 text-white">GitHub profile <i data-lucide="arrow-up-right" class="project-arrow h-4 w-4 transition"></i></a></div></div></div></article>
         </div>
       </section>
 
-      <section class="contact section reveal" id="contact">
-        <div class="title">
-          <span class="comment">// reach me</span>
-          <h1>Contact</h1>
-          <p>Here's how to get in touch.</p>
-        </div>
-        <div class="cards">
-          <div class="contactinfo">
-            <div class="label">Name</div>
-            <span class="link">Miguel Costa</span>
-          </div>
-          <div class="contactinfo">
-            <div class="label">WhatsApp</div>
-            <a
-              href="https://wa.me/"
-              class="link"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Not available :)</a
-            >
-          </div>
-          <div class="contactinfo">
-            <div class="label">Email</div>
-            <a href="mailto:miguellomcostta@gmail.com" class="link"
-              >oclunny@icloud.com</a
-            >
-          </div>
-          <div class="contactinfo socials">
-            <a
-              href="https://github.com/oclunny"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <i class="fa-brands fa-github" aria-hidden="true"></i>
-            </a>
-            <a
-              href="https://www.instagram.com/clunn.y"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/miguel-costa-0059b13b9/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
+      <section id="stack" class="border-y border-white/[.08] bg-white/[.015] py-24"><div class="mx-auto max-w-6xl px-5 sm:px-6"><div class="grid gap-10 md:grid-cols-[.8fr_1.2fr]"><div><p class="mb-2 text-xs font-semibold uppercase tracking-[.18em] text-zinc-500">My toolkit</p><h2 class="text-3xl font-semibold tracking-[-.04em]">The tools I use to build, automate, and explore.</h2></div><div class="flex content-start flex-wrap gap-2.5"><span class="pill">JavaScript</span><span class="pill">Python</span><span class="pill">Lua</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">Node.js</span><span class="pill">Electron</span><span class="pill">Flask</span><span class="pill">Bash</span><span class="pill">Git / GitHub</span><span class="pill">GitHub Actions</span><span class="pill">Linux</span><span class="pill">Neovim</span></div></div></div></section>
+
+      <section id="about" class="mx-auto max-w-6xl scroll-mt-28 px-5 py-28 sm:px-6"><div class="grid gap-8 rounded-3xl border border-white/10 bg-zinc-900/55 p-7 sm:p-10 md:grid-cols-[1.15fr_.85fr]"><div><p class="mb-3 text-xs font-semibold uppercase tracking-[.18em] text-zinc-500">A little about me</p><h2 class="max-w-xl text-3xl font-semibold leading-tight tracking-[-.04em] sm:text-4xl">Always learning. Always building something better.</h2></div><div class="text-base leading-7 text-zinc-400">I’m Miguel Ângelo, a developer and Linux enthusiast with a focus on creative coding, automation, open source, and game systems. I’m currently learning cybersecurity and Japanese, while exploring new ideas across the Linux ecosystem.</div></div></section>
+
+      <section id="contact" class="mx-auto max-w-6xl scroll-mt-28 px-5 pb-14 sm:px-6"><div class="relative overflow-hidden rounded-3xl border border-white/10 bg-zinc-100 px-7 py-14 text-zinc-950 sm:px-12 sm:py-20"><div class="absolute -right-16 -top-24 h-72 w-72 rounded-full bg-violet-400/50 blur-3xl"></div><div class="relative max-w-2xl"><p class="mb-3 text-xs font-semibold uppercase tracking-[.18em] text-zinc-600">Want to say hello?</p><h2 class="text-4xl font-semibold leading-[1.02] tracking-[-.055em] sm:text-6xl">Let’s make something useful.</h2><p class="mt-5 max-w-lg leading-7 text-zinc-600">For questions, ideas, or anything worth sharing, send me an email.</p><a href="mailto:miguellomcostta@icloud.com" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-zinc-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800">miguellomcostta@icloud.com <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div></div>
       </section>
     </main>
+    <footer class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between sm:px-6"><p>© <span id="year"></span> Miguel Ângelo. Built with intention.</p><p>Open source <span class="mx-2 text-zinc-700">/</span> Linux <span class="mx-2 text-zinc-700">/</span> Always learning</p></footer>
+    <style>.tag{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);border-radius:9999px;padding:.28rem .65rem;font-size:.72rem;color:#d4d4d8}.pill{border:1px solid rgba(255,255,255,.1);border-radius:.75rem;padding:.75rem 1rem;font-size:.9rem;color:#d4d4d8;transition:.2s}.pill:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.06);color:#fff}</style>
+    <script>
+      lucide.createIcons();
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const menuButton = document.getElementById('menu-button'); const mobileMenu = document.getElementById('mobile-menu');
+      menuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); menuButton.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden'))); });
+      mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+      const copyButton = document.getElementById('copy-email'); const feedback = document.getElementById('copy-feedback');
+      copyButton.addEventListener('click', async () => { try { await navigator.clipboard.writeText('miguellomcostta@icloud.com'); feedback.textContent = 'Copied to clipboard.'; } catch { feedback.textContent = 'Email: miguellomcostta@icloud.com'; } feedback.classList.remove('hidden'); setTimeout(() => feedback.classList.add('hidden'), 2500); });
+      const languageToggle = document.getElementById('language-toggle');
+      const translations = {
+        en: {
+          nav: ['Projects', 'Stack', 'About', 'Contact'], status: 'Building new things', badge: 'Developer · Linux enthusiast · creative builder',
+          hero: 'I build things, break limits, and <span class="text-zinc-500">keep learning.</span>', bio: 'I’m Miguel Ângelo — a developer who enjoys creative coding, automation, games, and open source. From Electron apps to game systems and Linux tooling, I turn curious ideas into working projects.',
+          projectsLabel: 'Selected work', projectsTitle: 'Featured projects.', stackLabel: 'My toolkit', stackTitle: 'The tools I use to build, automate, and explore.', aboutLabel: 'A little about me', aboutTitle: 'Always learning. Always building something better.', about: 'I’m Miguel, a developer and Linux enthusiast with a focus on creative coding, automation, open source, and game systems. I’m currently learning cybersecurity and Japanese, while exploring new ideas across the Linux ecosystem.',
+          contactLabel: 'Want to say hello?', contactTitle: 'Let’s make something useful.', contact: 'For questions, ideas, or anything worth sharing, send me an email.', footer: 'Open source <span class="mx-2 text-zinc-700">/</span> Linux <span class="mx-2 text-zinc-700">/</span> Always learning', copy: 'Copy email', cta: 'View projects', scroll: 'Scroll to explore',
+          projectLabels: ['01 / Desktop application', '02 / Linux customization', '03 / Game development'], projectDescriptions: ['A released Electron project, built as part of my exploration of desktop software and practical development.', 'Replace Roblox fonts in Sober with custom fonts using a lightweight asset overlay.', 'A completed game project — one of the systems that shaped my interest in making interactive worlds.']
+        },
+        pt: {
+          nav: ['Projetos', 'Tecnologias', 'Sobre mim', 'Contacto'], status: 'A criar coisas novas', badge: 'Programador · entusiasta de Linux · criador',
+          hero: 'Construo coisas, ultrapasso limites e <span class="text-zinc-500">continuo a aprender.</span>', bio: 'Sou o Miguel Ângelo — um programador que gosta de programação criativa, automação, jogos e open source. De aplicações Electron a sistemas de jogos e ferramentas Linux, transformo ideias curiosas em projetos reais.',
+          projectsLabel: 'Trabalho selecionado', projectsTitle: 'Projetos em destaque.', stackLabel: 'O meu kit de ferramentas', stackTitle: 'As ferramentas que uso para criar, automatizar e explorar.', aboutLabel: 'Um pouco sobre mim', aboutTitle: 'Sempre a aprender. Sempre a construir algo melhor.', about: 'Sou o Miguel, programador e entusiasta de Linux, com foco em programação criativa, automação, open source e sistemas de jogos. Estou atualmente a aprender cibersegurança e japonês, enquanto exploro novas ideias no ecossistema Linux.',
+          contactLabel: 'Queres dizer olá?', contactTitle: 'Vamos criar algo útil.', contact: 'Para perguntas, ideias ou algo que valha a pena partilhar, envia-me um email.', footer: 'Open source <span class="mx-2 text-zinc-700">/</span> Linux <span class="mx-2 text-zinc-700">/</span> Sempre a aprender', copy: 'Copiar email', cta: 'Ver projetos', scroll: 'Desliza para explorar',
+          projectLabels: ['01 / Aplicação de desktop', '02 / Personalização Linux', '03 / Desenvolvimento de jogos'], projectDescriptions: ['Um projeto Electron lançado, criado durante a minha exploração de software de desktop e desenvolvimento prático.', 'Substitui as fontes do Roblox no Sober por fontes personalizadas através de um overlay de recursos leve.', 'Um projeto de jogo concluído — um dos sistemas que alimentou o meu interesse em criar mundos interativos.']
+        }
+      };
+      let locale = 'en';
+      const setText = (selector, value, html = false) => { const el = document.querySelector(selector); if (el) html ? el.innerHTML = value : el.textContent = value; };
+      function applyLanguage(nextLocale) {
+        locale = nextLocale; const t = translations[locale]; document.documentElement.lang = locale === 'pt' ? 'pt-PT' : 'en'; document.title = locale === 'pt' ? 'Miguel Ângelo — Programador' : 'Miguel Ângelo — Developer';
+        document.querySelectorAll('nav a').forEach((link, i) => { if (i > 0 && i < 5) link.textContent = t.nav[i - 1]; });
+        document.querySelectorAll('#mobile-menu a').forEach((link, i) => link.textContent = t.nav[i]);
+        setText('#status-text', t.status); setText('main > section:nth-of-type(1) .inline-flex', t.badge); setText('main > section:nth-of-type(1) h1', t.hero, true); setText('main > section:nth-of-type(1) h1 + p', t.bio);
+        setText('#copy-email span', t.copy); setText('main > section:nth-of-type(1) a[href="#projects"]', t.cta); setText('main > section:nth-of-type(1) .text-sm:last-child', t.scroll);
+        setText('#projects .text-xs', t.projectsLabel); setText('#projects h2', t.projectsTitle); setText('#stack .text-xs', t.stackLabel); setText('#stack h2', t.stackTitle); setText('#about .text-xs', t.aboutLabel); setText('#about h2', t.aboutTitle); setText('#about .text-base', t.about);
+        setText('#contact .text-xs', t.contactLabel); setText('#contact h2', t.contactTitle); setText('#contact .text-zinc-600:not(.text-xs)', t.contact); setText('footer p:last-child', t.footer, true);
+        document.querySelectorAll('#projects article').forEach((card, i) => { setText(`#projects article:nth-of-type(${i + 1}) .text-sm`, t.projectLabels[i]); setText(`#projects article:nth-of-type(${i + 1}) h3 + p`, t.projectDescriptions[i]); });
+        languageToggle.textContent = locale === 'pt' ? 'EN' : 'PT'; languageToggle.setAttribute('aria-label', locale === 'pt' ? 'Mudar para inglês' : 'Mudar para português');
+      }
+      languageToggle.addEventListener('click', () => applyLanguage(locale === 'en' ? 'pt' : 'en'));
+    </script>
   </body>
 </html>
