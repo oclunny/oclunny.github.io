@@ -69,9 +69,10 @@
           <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="h-4 w-4 shrink-0 text-zinc-300">
             <path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.49c-2.01.44-2.43-.85-2.43-.85-.33-.84-.81-1.06-.81-1.06-.66-.45.05-.44.05-.44.73.05 1.12.75 1.12.75.65 1.11 1.7.79 2.11.6.07-.47.25-.79.46-.97-1.61-.18-3.31-.81-3.31-3.59 0-.79.28-1.44.75-1.95-.08-.18-.33-.92.07-1.92 0 0 .61-.2 2 .75A6.9 6.9 0 0 1 8 3.87c.61 0 1.23.08 1.8.24 1.38-.94 1.99-.75 1.99-.75.4 1 .15 1.74.07 1.92.47.51.75 1.16.75 1.95 0 2.79-1.7 3.4-3.32 3.58.26.23.49.67.49 1.35v2c0 .21.14.46.55.38A8 8 0 0 0 8 0Z"/>
           </svg>
-          <span>GitHub profile</span>
+          <span id="mobile-github-text">GitHub profile</span>
         </a>
       </div>
+    </header>
 
     <main id="home">
       <section class="mx-auto max-w-6xl px-5 pb-20 pt-16 sm:px-6 sm:pb-24 sm:pt-32 lg:pb-32">
@@ -96,7 +97,7 @@
       <section id="projects" class="mx-auto max-w-6xl scroll-mt-28 px-5 pb-20 sm:px-6 sm:pb-28">
         <div class="mb-9 flex items-end justify-between gap-4"><div><p class="mb-2 text-xs font-semibold uppercase tracking-[.18em] text-zinc-500">Selected work</p><h2 class="text-3xl font-semibold tracking-[-.04em] sm:text-4xl">Featured projects.</h2></div><a class="hidden items-center gap-2 text-sm text-zinc-400 transition hover:text-white sm:inline-flex" href="#contact">See what’s next <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
         <div class="grid gap-4 lg:grid-cols-2">
-          <!-- Featured Card 01 -->
+          <!-- Card 01 -->
           <article class="project-card group relative flex min-h-[320px] flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/70 p-6 shadow-glow transition duration-300 hover:-translate-y-1 hover:border-violet-300/30 sm:min-h-[365px] sm:p-8 lg:col-span-2">
             <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_86%_18%,rgba(59,130,246,.22)_0%,rgba(30,58,138,.12)_32%,transparent_66%)]"></div>
             
@@ -112,7 +113,6 @@
               </div>
             </div>
 
-            <!-- Mobile & Desktop responsive image block -->
             <div class="relative mt-6 flex h-44 w-full items-center justify-center rounded-2xl border border-blue-300/20 bg-zinc-950/90 p-4 shadow-2xl backdrop-blur-sm sm:absolute sm:bottom-8 sm:right-9 sm:mt-0 sm:h-52 sm:w-52 sm:rounded-[2rem]">
               <img src="assets/sentinel-wifi-dashboard-logo.png" alt="SENTINEL WiFi Dashboard logo" class="h-full w-full object-contain transition duration-500 group-hover:scale-105" loading="lazy" />
             </div>
@@ -134,7 +134,6 @@
               </div>
             </div>
 
-            <!-- Image only displays on tablet/desktop to avoid screen clutter on mobile -->
             <div class="absolute bottom-0 right-0 hidden h-48 w-64 overflow-hidden rounded-tl-3xl border-l border-t border-white/10 opacity-80 transition duration-500 group-hover:scale-105 sm:block">
               <img src="assets/sober-roblox-linux.png" alt="Sober running Roblox on Linux" class="h-full w-full object-cover object-left-top" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent"></div>
@@ -157,7 +156,6 @@
               </div>
             </div>
 
-            <!-- Image only displays on tablet/desktop to avoid overlapping on mobile -->
             <div class="absolute bottom-0 right-0 hidden h-56 w-56 overflow-hidden rounded-tl-[2rem] border-l border-t border-amber-200/20 shadow-2xl sm:block">
               <img src="assets/heartcastle-logo.png" alt="Heartcastle game logo" class="h-full w-full object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
@@ -204,14 +202,42 @@
       const setText = (selector, value, html = false) => { const el = document.querySelector(selector); if (el) html ? el.innerHTML = value : el.textContent = value; };
       function applyLanguage(nextLocale) {
         locale = nextLocale; const t = translations[locale]; document.documentElement.lang = locale === 'pt' ? 'pt-PT' : 'en'; document.title = locale === 'pt' ? 'Miguel Ângelo — Programador' : 'Miguel Ângelo — Developer';
+        
         document.querySelectorAll('nav a').forEach((link, i) => { if (i > 0 && i < 5) link.textContent = t.nav[i - 1]; });
-        document.querySelectorAll('#mobile-menu a').forEach((link, i) => link.textContent = t.nav[i]);
-        setText('#status-text', t.status); setText('main > section:nth-of-type(1) .inline-flex', t.badge); setText('main > section:nth-of-type(1) h1', t.hero, true); setText('main > section:nth-of-type(1) h1 + p', t.bio);
-        setText('#copy-email span', t.copy); setText('main > section:nth-of-type(1) a[href="#projects"]', t.cta); setText('main > section:nth-of-type(1) .text-sm:last-child', t.scroll);
-        setText('#projects .text-xs', t.projectsLabel); setText('#projects h2', t.projectsTitle); setText('#stack .text-xs', t.stackLabel); setText('#stack h2', t.stackTitle); setText('#about .text-xs', t.aboutLabel); setText('#about h2', t.aboutTitle); setText('#about .text-base', t.about);
-        setText('#contact .text-xs', t.contactLabel); setText('#contact h2', t.contactTitle); setText('#contact .text-zinc-600:not(.text-xs)', t.contact); setText('footer p:last-child', t.footer, true);
-        document.querySelectorAll('#projects article').forEach((card, i) => { setText(`#projects article:nth-of-type(${i + 1}) .text-sm`, t.projectLabels[i]); setText(`#projects article:nth-of-type(${i + 1}) h3 + p`, t.projectDescriptions[i]); });
-        languageToggle.textContent = locale === 'pt' ? 'EN' : 'PT'; languageToggle.setAttribute('aria-label', locale === 'pt' ? 'Mudar para inglês' : 'Mudar para português');
+        
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        for (let i = 0; i < 4; i++) {
+          if (mobileLinks[i]) mobileLinks[i].textContent = t.nav[i];
+        }
+        
+        setText('#mobile-github-text', locale === 'pt' ? 'Perfil do GitHub' : 'GitHub profile');
+
+        setText('#status-text', t.status); 
+        setText('main > section:nth-of-type(1) .inline-flex', t.badge); 
+        setText('main > section:nth-of-type(1) h1', t.hero, true); 
+        setText('main > section:nth-of-type(1) h1 + p', t.bio);
+        setText('#copy-email span', t.copy); 
+        setText('main > section:nth-of-type(1) a[href="#projects"]', t.cta); 
+        setText('main > section:nth-of-type(1) .text-sm:last-child', t.scroll);
+        setText('#projects .text-xs', t.projectsLabel); 
+        setText('#projects h2', t.projectsTitle); 
+        setText('#stack .text-xs', t.stackLabel); 
+        setText('#stack h2', t.stackTitle); 
+        setText('#about .text-xs', t.aboutLabel); 
+        setText('#about h2', t.aboutTitle); 
+        setText('#about .text-base', t.about);
+        setText('#contact .text-xs', t.contactLabel); 
+        setText('#contact h2', t.contactTitle); 
+        setText('#contact .text-zinc-600:not(.text-xs)', t.contact); 
+        setText('footer p:last-child', t.footer, true);
+        
+        document.querySelectorAll('#projects article').forEach((card, i) => { 
+          setText(`#projects article:nth-of-type(${i + 1}) .text-sm`, t.projectLabels[i]); 
+          setText(`#projects article:nth-of-type(${i + 1}) h3 + p`, t.projectDescriptions[i]); 
+        });
+        
+        languageToggle.textContent = locale === 'pt' ? 'EN' : 'PT'; 
+        languageToggle.setAttribute('aria-label', locale === 'pt' ? 'Mudar para inglês' : 'Mudar para português');
       }
       languageToggle.addEventListener('click', () => applyLanguage(locale === 'en' ? 'pt' : 'en'));
     </script>
